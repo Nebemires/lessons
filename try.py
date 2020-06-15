@@ -16,14 +16,15 @@ else:
     if current_gpu_temp >= 72 and current_pwr_limit >= 135000:
         subprocess.call(["nvidia-smi", "-i", "0", "-pl", "126"])
         print("126")
-        if current_gpu_temp >= 72 and current_pwr_limit >= 126000:
-            subprocess.call(["nvidia-smi", "-i", "0", "-pl", "117"])
-            print("117")
-            if current_gpu_temp >= 72 and current_pwr_limit >= 117000:
-                subprocess.call(["nvidia-smi", "-i", "0", "-pl", "108"])
-                print("108")
+
+    if current_gpu_temp >= 72 and current_pwr_limit >= 126000:
+        subprocess.call(["nvidia-smi", "-i", "0", "-pl", "117"])
+        print("117")
+
+    if current_gpu_temp >= 72 and current_pwr_limit >= 117000:
+        subprocess.call(["nvidia-smi", "-i", "0", "-pl", "108"])
+        print("108")
 
 nvmlShutdown()
 
 print("tick")
-
