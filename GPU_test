@@ -1,0 +1,52 @@
+import os
+from multiprocessing import Process, current_process
+import subprocess
+from py3nvml.py3nvml import *
+import time
+import py3nvml
+import datetime
+
+nvmlInit()
+
+handle = nvmlDeviceGetHandleByIndex(0)
+deviceCount = nvmlDeviceGetCount()
+gpu_count = py3nvml.grab_gpus()
+current_temp = nvmlDeviceGetTemperature(handle, NVML_TEMPERATURE_GPU)
+current_pwr_limit = (nvmlDeviceGetEnforcedPowerLimit(handle))
+current_power_consumption = nvmlDeviceGetPowerUsage(handle)
+fan_speed = nvmlDeviceGetFanSpeed(handle)
+
+
+# if current_pwr_limit == 275000:
+#     b = subprocess.call(["nvidia-smi", "-i", "0", "-pl", "200"])
+#     print(b)
+# b = subprocess.call(["nvidia-smi", "-i", "0"), "-pl", 200])
+# while current_temp:
+#     time.sleep(1)
+# print(gpu_count)
+def current_temp_():
+    while current_temp:
+        time.sleep(1)
+        process_id = os.getpid()
+        currentDT = datetime.datetime.now()
+        print(f"GPU", nvmlDeviceGetIndex(handle),
+              f"| Temp: {current_temp}",
+              f"| Consump : {current_power_consumption/int(1000)}"
+              f"| PL: {current_pwr_limit/1000}",
+              f"| Proc ID: {process_id}",
+              nvmlDeviceGetName(handle),
+              "|",
+              str(currentDT.strftime("%Y-%m-%d ""%H:%M:%S")))
+
+
+if __name__ == "__main__":
+    if current_pwr_limit == 275000:
+        print("275")
+    else:
+        print("Not 275")
+    current_temp_()
+# """Device name"""
+#
+# for i in range(deviceCount):
+#     handle = nvmlDeviceGetHandleByIndex(i)
+#     print("Device {}: {}".format(i, nvmlDeviceGetName(handle)))
