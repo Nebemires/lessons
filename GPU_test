@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import os
 from multiprocessing import Process, current_process
 import subprocess
@@ -17,13 +18,7 @@ while True:
     fan_speed = nvmlDeviceGetFanSpeed(handle)
 
 
-    # if current_pwr_limit == 275000:
-    #     b = subprocess.call(["nvidia-smi", "-i", "0", "-pl", "200"])
-    #     print(b)
-    # b = subprocess.call(["nvidia-smi", "-i", "0"), "-pl", 200])
-    # while current_temp:
-    #     time.sleep(1)
-    # print(gpu_count)
+ 
     def current_temp_():
 
             time.sleep(1)
@@ -44,8 +39,3 @@ while True:
     if __name__ == "__main__":
 
         current_temp_()
-# """Device name"""
-#
-# for i in range(deviceCount):
-#     handle = nvmlDeviceGetHandleByIndex(i)
-#     print("Device {}: {}".format(i, nvmlDeviceGetName(handle)))
