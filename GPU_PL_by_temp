@@ -1,4 +1,4 @@
-# /usr/bin/python3
+#! /usr/bin/python3
 import subprocess
 from py3nvml.py3nvml import *
 import time
@@ -23,27 +23,29 @@ def current_temp_():
         if nvmlDeviceGetTemperature(handle, NVML_TEMPERATURE_GPU) <= 72 and nvmlDeviceGetEnforcedPowerLimit(
                 handle) == 135000:
             print("Temp and PL is GOOD!")
-            continue
         else:
-
-            if nvmlDeviceGetTemperature(handle, NVML_TEMPERATURE_GPU) >= 73 and nvmlDeviceGetEnforcedPowerLimit(
-                    handle) == 135000:
-                subprocess.call(["nvidia-smi", "-i", "0", "-pl", "127"])
-                print("Change to 127")
-            else:
-                continue
-            if nvmlDeviceGetTemperature(handle, NVML_TEMPERATURE_GPU) >= 73 and nvmlDeviceGetEnforcedPowerLimit(
-                    handle) == 127000:
-                subprocess.call(["nvidia-smi", "-i", "0", "-pl", "117"])
-                print("Change to 117")
-            else:
-                continue
-            if nvmlDeviceGetTemperature(handle, NVML_TEMPERATURE_GPU) >= 73 and nvmlDeviceGetEnforcedPowerLimit(
-                    handle) == 117000:
-                subprocess.call(["nvidia-smi", "-i", "0", "-pl", "108"])
-                print("Change to 108")
-            else:
-                continue
+            continue
+        time.sleep(15)
+        if nvmlDeviceGetTemperature(handle, NVML_TEMPERATURE_GPU) >= 73 and nvmlDeviceGetEnforcedPowerLimit(
+                handle) == 135000:
+            subprocess.call(["nvidia-smi", "-i", "0", "-pl", "127"])
+            print("Change to 127")
+        else:
+            continue
+        time.sleep(15)
+        if nvmlDeviceGetTemperature(handle, NVML_TEMPERATURE_GPU) >= 73 and nvmlDeviceGetEnforcedPowerLimit(
+                handle) == 127000:
+            subprocess.call(["nvidia-smi", "-i", "0", "-pl", "117"])
+            print("Change to 117")
+        else:
+            continue
+        time.sleep(15)
+        if nvmlDeviceGetTemperature(handle, NVML_TEMPERATURE_GPU) >= 73 and nvmlDeviceGetEnforcedPowerLimit(
+                handle) == 117000:
+            subprocess.call(["nvidia-smi", "-i", "0", "-pl", "108"])
+            print("Change to 108")
+        else:
+            continue
 
     nvmlShutdown()
 
