@@ -1,6 +1,6 @@
 #K14
-powerwake 70:85:c2:73:62:4f       
-sleep 5
+#powerwake 70:85:c2:73:62:4f       
+#sleep 5
 
 #K16                     	  
 powerwake 70:85:c2:4b:8e:69       
@@ -9,6 +9,7 @@ sleep 5
 #K17
 powerwake 70:85:c2:4b:92:8f       
 sleep 5
+
 #K19                       	  
 powerwake 70:85:c2:69:7f:77       
 sleep 5
@@ -32,6 +33,9 @@ sleep 5
 #K24
 powerwake 70:85:c2:67:04:8f      
 sleep 5
+#K26
+powerwake 70:85:c2:4b:56:f6      
+sleep 5
 
 #K27                      	  
 powerwake 70:85:c2:75:ba:37       
@@ -41,7 +45,15 @@ sleep 5
 powerwake 70:85:c2:4b:98:0c       
 sleep 5
 
+#K30                	  
+#powerwake 70:85:c2:4b:98:f5    
+#sleep 5
+
+#K31                 	  
+powerwake 70:85:c2:4b:98:2c       
+sleep 5
+
 #K32                       	  
-powerwake 70:85:c2:4b:98:36
+#powerwake 70:85:c2:4b:98:36
      
 echo "All Done!"
