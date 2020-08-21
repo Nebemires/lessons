@@ -46,8 +46,8 @@ powerwake 70:85:c2:4b:98:0c
 sleep 5
 
 #K30                	  
-#powerwake 70:85:c2:4b:98:f5    
-#sleep 5
+powerwake 70:85:c2:4b:98:f5    
+sleep 5
 
 #K31                 	  
 powerwake 70:85:c2:4b:98:2c       
