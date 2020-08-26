@@ -1,4 +1,4 @@
-K14
+#K14
 powerwake 70:85:c2:73:62:4f       
 sleep 5
 
