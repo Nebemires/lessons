@@ -8,13 +8,13 @@ sleep 5
 powerwake 70:85:c2:73:61:c9
 sleep 5
 #K04
-powerwake 70:85:c2:73:63:e2 
+powerwake 70:85:c2:73:63:e2
 sleep 5
 #K05
 powerwake 70:85:c2:73:62:97
 sleep 5
 #K06
-powerwake 70:85:c2:75:04:83 
+powerwake 70:85:c2:75:04:83
 sleep 5
 #K07
 powerwake 70:85:c2:75:03:f9
